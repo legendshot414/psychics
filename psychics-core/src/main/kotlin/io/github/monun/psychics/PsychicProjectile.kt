@@ -17,7 +17,7 @@
 
 package io.github.monun.psychics
 
-import io.github.monun.tap.fake.FakeProjectile
+import io.github.legendshot414.tap.fake.FakeProjectile
 
 open class PsychicProjectile(maxTicks: Int, range: Double) : FakeProjectile(maxTicks, range) {
     lateinit var psychic: Psychic

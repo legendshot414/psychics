@@ -3,8 +3,8 @@ package io.github.monun.psychics.ability.snatch
 import io.github.monun.psychics.AbilityConcept
 import io.github.monun.psychics.ActiveAbility
 import io.github.monun.psychics.Channel
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
 import org.bukkit.*
 import org.bukkit.entity.ArmorStand
 import org.bukkit.entity.LivingEntity

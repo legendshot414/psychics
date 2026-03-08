@@ -4,6 +4,7 @@ import io.github.monun.psychics.Ability;
 import io.github.monun.psychics.AbilityConcept;
 import io.github.monun.psychics.damage.DamageType;
 import org.bukkit.Location;
+import org.bukkit.damage.DamageSource;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.jetbrains.annotations.NotNull;
@@ -28,7 +29,9 @@ public class EntityDamageByPsychicEvent extends EntityDamageByEntityEvent {
             @Nullable Location knockbackSource,
             double knockbackForce
     ) {
-        super(damager, damagee, DamageCause.ENTITY_ATTACK, damage);
+        super(damager, damagee, DamageCause.ENTITY_ATTACK,
+                DamageSource.builder(org.bukkit.damage.DamageType.MOB_ATTACK).withCausingEntity(damager).withDirectEntity(damager).build(),
+                damage);
 
         this.ability = ability;
         this.damageType = damageType;

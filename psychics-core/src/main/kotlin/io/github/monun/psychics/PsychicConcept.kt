@@ -22,9 +22,9 @@ import io.github.monun.psychics.tooltip.TooltipBuilder
 import io.github.monun.psychics.tooltip.removeDefaultItemDecorations
 import io.github.monun.psychics.tooltip.stats
 import io.github.monun.psychics.tooltip.template
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.ConfigSupport
-import io.github.monun.tap.config.RangeDouble
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.ConfigSupport
+import io.github.legendshot414.tap.config.RangeDouble
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor

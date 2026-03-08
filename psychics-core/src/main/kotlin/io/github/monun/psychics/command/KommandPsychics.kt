@@ -18,8 +18,8 @@
 package io.github.monun.psychics.command
 
 import io.github.monun.invfx.openFrame
-import io.github.monun.kommand.KommandSource
-import io.github.monun.kommand.PluginKommand
+import io.github.legendshot414.kommand.KommandSource
+import io.github.legendshot414.kommand.PluginKommand
 import io.github.monun.psychics.AbilityConcept
 import io.github.monun.psychics.PsychicConcept
 import io.github.monun.psychics.PsychicManager

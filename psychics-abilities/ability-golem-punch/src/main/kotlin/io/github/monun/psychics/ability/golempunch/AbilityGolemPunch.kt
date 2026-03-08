@@ -2,9 +2,9 @@ package io.github.monun.psychics.ability.golempunch
 
 import io.github.monun.psychics.Ability
 import io.github.monun.psychics.AbilityConcept
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.event.EntityProvider
-import io.github.monun.tap.event.TargetEntity
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.event.EntityProvider
+import io.github.legendshot414.tap.event.TargetEntity
 import net.kyori.adventure.text.Component.text
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener

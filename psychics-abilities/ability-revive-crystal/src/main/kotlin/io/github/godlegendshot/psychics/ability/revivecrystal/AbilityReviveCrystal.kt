@@ -2,8 +2,8 @@ package io.github.godlegendshot.psychics.ability.revivecrystal
 
 import io.github.monun.psychics.AbilityConcept
 import io.github.monun.psychics.ActiveAbility
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.fake.FakeEntity
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.fake.FakeEntity
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import net.kyori.adventure.text.format.TextDecoration

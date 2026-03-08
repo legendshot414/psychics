@@ -115,12 +115,12 @@ object DamageSupport {
 
 /**
  * 아이템의 보호 인챈트 수치를 가져옵니다.
- * [Enchantment.PROTECTION_ENVIRONMENTAL]의 경우 두배의 수치를 반환합니다.
+ * [Enchantment.PROTECTION]의 경우 두배의 수치를 반환합니다.
  */
 fun ItemStack.getProtection(enchantment: Enchantment): Int {
-    var protection = getEnchantmentLevel(Enchantment.PROTECTION_ENVIRONMENTAL)
+    var protection = getEnchantmentLevel(Enchantment.PROTECTION)
 
-    if (enchantment != Enchantment.PROTECTION_ENVIRONMENTAL) {
+    if (enchantment != Enchantment.PROTECTION) {
         val enchantmentProtection = getEnchantmentLevel(enchantment) shl 1
 
         if (protection < enchantmentProtection) {

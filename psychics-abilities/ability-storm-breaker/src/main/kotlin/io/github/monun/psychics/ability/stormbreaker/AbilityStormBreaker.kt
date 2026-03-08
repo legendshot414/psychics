@@ -10,14 +10,14 @@ import io.github.monun.psychics.tooltip.TooltipBuilder
 import io.github.monun.psychics.tooltip.stats
 import io.github.monun.psychics.tooltip.template
 import io.github.monun.psychics.util.TargetFilter
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.fake.FakeEntity
-import io.github.monun.tap.fake.Movement
-import io.github.monun.tap.fake.Trail
-import io.github.monun.tap.math.normalizeAndLength
-import io.github.monun.tap.math.toRadians
-import io.github.monun.tap.trail.TrailSupport
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.fake.FakeEntity
+import io.github.legendshot414.tap.fake.Movement
+import io.github.legendshot414.tap.fake.Trail
+import io.github.legendshot414.tap.math.normalizeAndLength
+import io.github.legendshot414.tap.math.toRadians
+import io.github.legendshot414.tap.trail.TrailSupport
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.*
@@ -288,7 +288,7 @@ class AbilityStormBreaker : Ability<AbilityConceptStormBreaker>() {
                             z += nextDouble() - 0.5
                         }
                         world.spawnParticle(
-                            Particle.ITEM_CRACK,
+                            Particle.ITEM,
                             hitLocation,
                             0,
                             particleVector.x,
@@ -306,7 +306,7 @@ class AbilityStormBreaker : Ability<AbilityConceptStormBreaker>() {
                     val knockback = concept.knockback
                     world.strikeLightningEffect(hitLocation)
                     val potionEffect = PotionEffect(
-                        PotionEffectType.SLOW,
+                        PotionEffectType.SLOWNESS,
                         concept.slowDurationTicks,
                         concept.slowAmplifier,
                         false,

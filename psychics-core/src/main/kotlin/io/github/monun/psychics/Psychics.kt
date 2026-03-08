@@ -18,7 +18,7 @@
 package io.github.monun.psychics
 
 import io.github.monun.psychics.plugin.PsychicsPlugin
-import io.github.monun.tap.fake.FakeEntityServer
+import io.github.legendshot414.tap.fake.FakeEntityServer
 import org.bukkit.entity.Player
 import java.util.logging.Logger
 

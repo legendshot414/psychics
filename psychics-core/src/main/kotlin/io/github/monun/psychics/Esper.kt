@@ -21,6 +21,7 @@ import io.github.monun.psychics.attribute.EsperAttribute
 import io.github.monun.psychics.attribute.EsperStatistic
 import io.github.monun.psychics.damage.attackDamage
 import io.github.monun.psychics.item.removeAllPsychicbounds
+import org.bukkit.NamespacedKey
 import org.bukkit.attribute.Attribute
 import org.bukkit.attribute.AttributeModifier
 import org.bukkit.configuration.file.YamlConfiguration
@@ -111,8 +112,8 @@ class Esper(
         val player = player
         player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.let { maxHealth ->
             val healthBonus = psychic?.concept?.healthBonus ?: 0.0
-            val modifier =
-                AttributeModifier(attributeUniqueId, "Psychics", healthBonus, AttributeModifier.Operation.ADD_NUMBER)
+            val key = NamespacedKey.fromString("psychics:health_bonus")!!
+            val modifier = AttributeModifier(key, healthBonus, AttributeModifier.Operation.ADD_NUMBER)
 
             maxHealth.removeModifier(modifier)
             maxHealth.addModifier(modifier)

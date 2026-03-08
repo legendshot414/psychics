@@ -2,8 +2,8 @@ package io.github.monun.psychics.ability.berserker
 
 import io.github.monun.psychics.AbilityConcept
 import io.github.monun.psychics.ActiveAbility
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
 import org.bukkit.*
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -45,7 +45,7 @@ class AbilityBerserker : ActiveAbility<AbilityConceptBerserker>(), Listener {
         val location = player.location.apply { y += 2.0 }
         val world = location.world
 
-        world.spawnParticle(Particle.VILLAGER_ANGRY, location.x, location.y, location.z, 4, 0.25, 0.0, 0.25, 0.0, null, true)
+        world.spawnParticle(Particle.ANGRY_VILLAGER, location.x, location.y, location.z, 4, 0.25, 0.0, 0.25, 0.0, null, true)
     }
 
     override fun onCast(event: PlayerEvent, action: WandAction, target: Any?) {

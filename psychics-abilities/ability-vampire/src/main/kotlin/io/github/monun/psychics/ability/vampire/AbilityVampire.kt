@@ -4,10 +4,10 @@ import io.github.monun.psychics.Ability
 import io.github.monun.psychics.AbilityConcept
 import io.github.monun.psychics.attribute.EsperStatistic
 import io.github.monun.psychics.tooltip.TooltipBuilder
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.event.EntityProvider
-import io.github.monun.tap.event.TargetEntity
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.event.EntityProvider
+import io.github.legendshot414.tap.event.TargetEntity
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.TextComponent
 import net.kyori.adventure.text.format.NamedTextColor
@@ -116,7 +116,7 @@ class AbilityVampire : Ability<AbilityConceptVampire>(), Listener {
                             val location = item.location.apply { y = box.centerY }
                             val world = location.world
 
-                            world.spawnParticle(Particle.ITEM_CRACK, location, 32, 0.0, 0.0, 0.0, 0.1, itemStack)
+                            world.spawnParticle(Particle.ITEM, location, 32, 0.0, 0.0, 0.0, 0.1, itemStack)
                             world.playSound(location, Sound.ENTITY_ITEM_PICKUP, 1.0F, 0.1F)
                         }
                     }

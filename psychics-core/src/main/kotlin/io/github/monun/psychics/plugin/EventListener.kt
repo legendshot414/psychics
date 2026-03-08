@@ -24,7 +24,7 @@ import io.github.monun.psychics.item.enchantability
 import io.github.monun.psychics.item.isPsychicbound
 import io.github.monun.psychics.item.psionicsLevel
 import io.github.monun.psychics.item.removeAllPsychicbounds
-import io.github.monun.tap.fake.FakeEntityServer
+import io.github.legendshot414.tap.fake.FakeEntityServer
 import org.bukkit.GameMode
 import org.bukkit.Material
 import org.bukkit.entity.Player

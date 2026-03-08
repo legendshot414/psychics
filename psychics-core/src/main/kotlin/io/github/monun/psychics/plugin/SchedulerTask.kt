@@ -18,7 +18,8 @@
 package io.github.monun.psychics.plugin
 
 import io.github.monun.psychics.PsychicManager
-import io.github.monun.tap.fake.FakeEntityServer
+import io.github.legendshot414.tap.fake.FakeEntityServer
+
 
 class SchedulerTask(
     private val psychicManager: PsychicManager,

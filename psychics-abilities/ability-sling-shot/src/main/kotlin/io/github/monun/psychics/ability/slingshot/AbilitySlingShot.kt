@@ -6,12 +6,12 @@ import io.github.monun.psychics.attribute.EsperStatistic
 import io.github.monun.psychics.damage.Damage
 import io.github.monun.psychics.damage.DamageType
 import io.github.monun.psychics.util.TargetFilter
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.fake.FakeEntity
-import io.github.monun.tap.fake.Movement
-import io.github.monun.tap.fake.Trail
-import io.github.monun.tap.math.normalizeAndLength
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.fake.FakeEntity
+import io.github.legendshot414.tap.fake.Movement
+import io.github.legendshot414.tap.fake.Trail
+import io.github.legendshot414.tap.math.normalizeAndLength
 import net.kyori.adventure.text.Component.text
 import org.bukkit.*
 import org.bukkit.entity.ArmorStand
@@ -123,7 +123,7 @@ class AbilitySlingShot : Ability<AbilityConceptSlingShot>(), Listener {
 
                         val hitLocation = result.hitPosition.toLocation(world)
                         world.spawnParticle(
-                            Particle.BLOCK_DUST,
+                            Particle.BLOCK,
                             hitLocation,
                             32,
                             0.0,

@@ -8,8 +8,8 @@ import io.github.monun.psychics.damage.Damage
 import io.github.monun.psychics.damage.DamageType
 import io.github.monun.psychics.damage.psychicDamage
 import io.github.monun.psychics.util.TargetFilter
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.trail.TrailSupport
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.trail.TrailSupport
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.*
@@ -53,7 +53,7 @@ class AbilityMagicArchery : Ability<AbilityConceptMagicArchery>(), Listener {
         val projectile = event.projectile
 
         if (projectile is Arrow) {
-            if (projectile.basePotionData.type != PotionType.UNCRAFTABLE || projectile.hasCustomEffects()) return
+            if (projectile.basePotionType != null || projectile.hasCustomEffects()) return
 
             val player = esper.player
             val result = test()

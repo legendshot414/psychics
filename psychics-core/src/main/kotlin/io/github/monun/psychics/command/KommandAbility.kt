@@ -1,7 +1,7 @@
 package io.github.monun.psychics.command
 
 import io.github.monun.invfx.openFrame
-import io.github.monun.kommand.PluginKommand
+import io.github.legendshot414.kommand.PluginKommand
 import io.github.monun.psychics.esper
 import io.github.monun.psychics.invfx.InvPsychic
 import net.kyori.adventure.text.Component.text

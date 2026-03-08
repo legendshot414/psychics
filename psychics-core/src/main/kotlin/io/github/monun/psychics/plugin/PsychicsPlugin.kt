@@ -17,15 +17,15 @@
 
 package io.github.monun.psychics.plugin
 
-import io.github.monun.kommand.kommand
+import io.github.legendshot414.kommand.kommand
 import io.github.monun.psychics.PsychicManager
 import io.github.monun.psychics.Psychics
 import io.github.monun.psychics.attribute.EsperStatistic
 import io.github.monun.psychics.command.KommandAbility
 import io.github.monun.psychics.command.KommandPsychics
 import io.github.monun.psychics.damage.Damage
-import io.github.monun.tap.event.EntityEventManager
-import io.github.monun.tap.fake.FakeEntityServer
+import io.github.legendshot414.tap.event.EntityEventManager
+import io.github.legendshot414.tap.fake.FakeEntityServer
 import org.bukkit.Bukkit
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.java.JavaPlugin

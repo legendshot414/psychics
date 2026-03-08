@@ -2,7 +2,7 @@ package io.github.godlegendshot.psychics.ability.invincible
 
 import io.github.monun.psychics.Ability
 import io.github.monun.psychics.AbilityConcept
-import io.github.monun.tap.config.Name
+import io.github.legendshot414.tap.config.Name
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.Particle
@@ -36,8 +36,8 @@ class  AbilityInvincible : Ability<AbilityConceptInvincible>() ,Listener {
         val player = esper.player
         val location = player.location.apply { y += 1.8 }
         val world = location.world
-        world.spawnParticle(Particle.TOTEM, location, 20, 0.5, 0.0, 0.5, 0.0, null, true)
-        world.spawnParticle(Particle.FIREWORKS_SPARK, location, 20, 0.5,0.0,0.5,0.0, null, true)
+        world.spawnParticle(Particle.TOTEM_OF_UNDYING, location, 20, 0.5, 0.0, 0.5, 0.0, null, true)
+        world.spawnParticle(Particle.FIREWORK, location, 20, 0.5,0.0,0.5,0.0, null, true)
     }
 
     @EventHandler(ignoreCancelled = true)

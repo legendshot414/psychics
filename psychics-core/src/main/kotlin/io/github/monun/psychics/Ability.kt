@@ -24,8 +24,8 @@ import io.github.monun.psychics.damage.psychicHeal
 import io.github.monun.psychics.format.decimalFormat
 import io.github.monun.psychics.util.TargetFilter
 import io.github.monun.psychics.util.Times
-import io.github.monun.tap.ref.getValue
-import io.github.monun.tap.ref.weaky
+import io.github.legendshot414.tap.ref.getValue
+import io.github.legendshot414.tap.ref.weaky
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.Component.space
 import net.kyori.adventure.text.Component.text

@@ -9,9 +9,9 @@ import io.github.monun.psychics.damage.DamageType
 import io.github.monun.psychics.damage.psychicDamage
 import io.github.monun.psychics.tooltip.TooltipBuilder
 import io.github.monun.psychics.util.TargetFilter
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.fake.FakeEntity
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.fake.FakeEntity
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import net.kyori.adventure.text.format.TextDecoration
@@ -114,7 +114,7 @@ class AbilityBomber : ActiveAbility<AbilityConceptBomber>(), Listener {
             val world = location.world
 
             val r = max(1.0, concept.range - 2.0)
-            world.spawnParticle(Particle.EXPLOSION_HUGE, location, (r * r).toInt(), r, r, r, 0.0, null, true)
+            world.spawnParticle(Particle.EXPLOSION_EMITTER, location, (r * r).toInt(), r, r, r, 0.0, null, true)
             world.playSound(location, Sound.ENTITY_GENERIC_EXPLODE, 2.0F, 1.0F)
 
             val damage = concept.damage!!
