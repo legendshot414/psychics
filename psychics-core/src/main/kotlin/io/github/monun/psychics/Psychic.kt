@@ -27,9 +27,6 @@ import io.github.legendshot414.tap.ref.getValue
 import io.github.legendshot414.tap.ref.weaky
 import io.github.legendshot414.tap.task.Ticker
 import io.github.legendshot414.tap.task.TickerTask
-import net.kyori.adventure.text.Component
-import net.kyori.adventure.text.format.NamedTextColor
-import net.kyori.adventure.text.format.TextDecoration
 import org.bukkit.Bukkit
 import org.bukkit.Location
 import org.bukkit.ChatColor
@@ -531,7 +528,7 @@ class Psychic internal constructor(
         val health = player.health
 
         if (health > 0.0) {
-            val maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.value ?: 20.0
+            val maxHealth = player.getAttribute(Attribute.MAX_HEALTH)?.value ?: 20.0
             player.health =
                 (player.health + concept.healthRegenPerSecond * (elapsedTime / 1000.0)).coerceIn(
                     0.0,

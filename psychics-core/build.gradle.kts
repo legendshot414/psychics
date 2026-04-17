@@ -1,9 +1,9 @@
 plugins {
-    id("org.jetbrains.dokka") version "1.7.20"
+    id("org.jetbrains.dokka") version "2.1.0"
 }
 
 dependencies {
-    implementation("io.github.legendshot414:kommand-api:1.0.0")
+    implementation("io.github.legendshot414:kommand-api:1.0.3")
     implementation("io.github.monun:invfx-api:3.3.2")
 }
 
@@ -21,7 +21,7 @@ tasks {
 
     register<Jar>("dokkaJar") {
         archiveClassifier.set("javadoc")
-        dependsOn("dokkaHtml")
+        dependsOn("dokkaGenerateHtml")
 
         from("$buildDir/dokka/html/") {
             include("**")

@@ -133,10 +133,10 @@ fun Inventory.addItemNonDuplicate(items: Collection<ItemStack>) {
 }
 
 private fun ItemStack.isSimilarLore(other: ItemStack): Boolean {
-    val meta = itemMeta
-    val otherMeta = other.itemMeta
+    val meta = itemMeta ?: return  other.itemMeta == null
+    val otherMeta = other.itemMeta ?: return false
 
-    return type == other.type && data == other.data && meta.displayName() == itemMeta.displayName() && meta.lore() == otherMeta.lore()
+    return type == other.type && meta.displayName() == itemMeta.displayName() && meta.lore() == otherMeta.lore()
 }
 
 val Material.enchantability: Int

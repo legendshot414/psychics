@@ -151,8 +151,8 @@ fun LivingEntity.getProtection(enchantment: Enchantment): Int {
 @Suppress("UselessCallOnCollection")
 val LivingEntity.attackDamage: Double
     get() {
-        val armor = getAttribute(Attribute.GENERIC_ARMOR)?.value ?: 0.0
-        val armorTough = getAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS)?.value ?: 0.0
+        val armor = getAttribute(Attribute.ARMOR)?.value ?: 0.0
+        val armorTough = getAttribute(Attribute.ARMOR_TOUGHNESS)?.value ?: 0.0
         val psionicsLevel = equipment?.armorContents?.asSequence()?.filterNotNull()?.sumOf { it.psionicsLevel } ?: 0
 
         return DamageSupport.calculateAttackDamage(armor, armorTough, psionicsLevel.toDouble())
@@ -197,8 +197,8 @@ private fun LivingEntity.psychicDamageActual(
     knockbackSource: Location? = damager.location,
     knockbackForce: Double = 0.0
 ): Double {
-    val armor = getAttribute(Attribute.GENERIC_ARMOR)?.value ?: 0.0
-    val armorTough = getAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS)?.value ?: 0.0
+    val armor = getAttribute(Attribute.ARMOR)?.value ?: 0.0
+    val armorTough = getAttribute(Attribute.ARMOR_TOUGHNESS)?.value ?: 0.0
     val protection = getProtection(type.protection)
     val actualDamage = DamageSupport.calculatePsychicDamage(damage, armor, armorTough, protection.toDouble())
 
@@ -212,7 +212,7 @@ private fun LivingEntity.psychicDamageActual(
         val deltaZ = knockbackSource.z - targetLocation.z
 
         // 대상 넉백 저항으로 인한 넉백 감소
-        getAttribute(Attribute.GENERIC_KNOCKBACK_RESISTANCE)?.run { force *= 1.0 - value }
+        getAttribute(Attribute.KNOCKBACK_RESISTANCE)?.run { force *= 1.0 - value }
 
         if (force > 0.0) {
             val oldVelocity = velocity
@@ -258,7 +258,7 @@ fun LivingEntity.psychicHeal(
 
     if (!event.callEvent()) return 0.0
 
-    val maxHealth = getAttribute(Attribute.GENERIC_MAX_HEALTH)?.value ?: error("Not found attribute Attribute.GENERIC_MAX_HEALTH")
+    val maxHealth = getAttribute(Attribute.MAX_HEALTH)?.value ?: error("Not found attribute Attribute.GENERIC_MAX_HEALTH")
     val newAmount = event.amount
     val newHealth = min(maxHealth, currentHealth + newAmount)
 

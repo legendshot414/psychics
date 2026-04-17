@@ -63,7 +63,7 @@ class Esper(
         return when (attr) {
             EsperAttribute.ATTACK_DAMAGE -> player.attackDamage
             EsperAttribute.LEVEL -> player.level.toDouble()
-            EsperAttribute.DEFENSE -> player.getAttribute(Attribute.GENERIC_ARMOR)?.value ?: 0.0
+            EsperAttribute.DEFENSE -> player.getAttribute(Attribute.ARMOR)?.value ?: 0.0
             EsperAttribute.HEALTH -> player.health
             EsperAttribute.MANA -> psychic?.mana ?: 0.0
         }
@@ -110,7 +110,7 @@ class Esper(
 
     private fun updateAttribute() {
         val player = player
-        player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.let { maxHealth ->
+        player.getAttribute(Attribute.MAX_HEALTH)?.let { maxHealth ->
             val healthBonus = psychic?.concept?.healthBonus ?: 0.0
             val key = NamespacedKey.fromString("psychics:health_bonus")!!
             val modifier = AttributeModifier(key, healthBonus, AttributeModifier.Operation.ADD_NUMBER)

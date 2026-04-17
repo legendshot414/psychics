@@ -1,5 +1,7 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "2.3.20"
 }
 
 java {
@@ -13,14 +15,12 @@ allprojects {
         mavenCentral()
     }
 
-    tasks {
-        withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class) {
-            kotlinOptions {
-                jvmTarget = "21"
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+            compilerOptions {
+                jvmTarget.set(JvmTarget.JVM_21)
             }
         }
     }
-}
 
 subprojects {
     apply(plugin = "org.jetbrains.kotlin.jvm")
@@ -30,11 +30,11 @@ subprojects {
     }
 
     dependencies {
-        compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+        compileOnly("io.papermc.paper:paper-api:1.21.3-R0.1-SNAPSHOT")
 
         implementation(kotlin("stdlib"))
         implementation(kotlin("reflect"))
 
-        implementation("io.github.legendshot414:tap-api:1.0.3")
+        implementation("io.github.legendshot414:tap-api:1.1.3-BETA.2")
     }
 }

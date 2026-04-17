@@ -7,13 +7,13 @@ import io.github.monun.psychics.PsychicProjectile
 import io.github.monun.psychics.damage.DamageType
 import io.github.monun.psychics.damage.psychicDamage
 import io.github.monun.psychics.util.TargetFilter
-import io.github.monun.tap.config.Config
-import io.github.monun.tap.config.Name
-import io.github.monun.tap.fake.FakeEntity
-import io.github.monun.tap.fake.Movement
-import io.github.monun.tap.fake.Trail
-import io.github.monun.tap.math.normalizeAndLength
-import io.github.monun.tap.trail.TrailSupport
+import io.github.legendshot414.tap.config.Config
+import io.github.legendshot414.tap.config.Name
+import io.github.legendshot414.tap.fake.FakeEntity
+import io.github.legendshot414.tap.fake.Movement
+import io.github.legendshot414.tap.fake.Trail
+import io.github.legendshot414.tap.math.normalizeAndLength
+import io.github.legendshot414.tap.trail.TrailSupport
 import net.kyori.adventure.text.Component.text
 import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.*
@@ -146,14 +146,14 @@ class AbilitySupernova : ActiveAbility<AbilityConceptSupernova>(), Listener{
                 val world = start.world
                 if (!perfectcharge){
                     TrailSupport.trail(start, trail.to, 1.0) { w,x,y,z ->
-                        w.spawnParticle(Particle.REDSTONE, x, y, z, 25, 0.5, 0.5, 0.5, 0.25, Particle.DustOptions(Color.PURPLE, 1.0f), true)
-                        w.spawnParticle(Particle.REDSTONE, x, y, z, 15, 1.0, 1.0, 1.0, 0.25, Particle.DustOptions(Color.AQUA, 1.5f), true)
+                        w.spawnParticle(Particle.DUST, x, y, z, 25, 0.5, 0.5, 0.5, 0.25, Particle.DustOptions(Color.PURPLE, 1.0f), true)
+                        w.spawnParticle(Particle.DUST, x, y, z, 15, 1.0, 1.0, 1.0, 0.25, Particle.DustOptions(Color.AQUA, 1.5f), true)
                     }
                 }
                 else if(perfectcharge){
                     TrailSupport.trail(start, trail.to, 1.0) { w,x,y,z ->
-                        w.spawnParticle(Particle.REDSTONE, x, y, z, 50, 0.7, 0.7, 0.7, 0.25, Particle.DustOptions(Color.PURPLE, 1.0f), true)
-                        w.spawnParticle(Particle.REDSTONE, x, y, z, 10, 1.5, 1.5, 1.5, 0.25, Particle.DustOptions(Color.AQUA, 1.5f), true)
+                        w.spawnParticle(Particle.DUST, x, y, z, 50, 0.7, 0.7, 0.7, 0.25, Particle.DustOptions(Color.PURPLE, 1.0f), true)
+                        w.spawnParticle(Particle.DUST, x, y, z, 10, 1.5, 1.5, 1.5, 0.25, Particle.DustOptions(Color.AQUA, 1.5f), true)
                     }
                 }
 
@@ -172,7 +172,7 @@ class AbilitySupernova : ActiveAbility<AbilityConceptSupernova>(), Listener{
                         var damage = concept.maxExplosionDamage * (chargeper / 100)
                         chargeper = 0.0
                         perfectcharge = false
-                        world.spawnParticle(Particle.EXPLOSION_HUGE, hitLocation, 10, 2.0, 2.0, 2.0, 0.25, null, true)
+                        world.spawnParticle(Particle.EXPLOSION_EMITTER, hitLocation, 10, 2.0, 2.0, 2.0, 0.25, null, true)
                         world.playSound(hitLocation, Sound.ENTITY_GENERIC_EXPLODE, 2.0f, 1.0f)
                         world.getNearbyEntities(hitLocation, radius, radius, radius, TargetFilter(esper.player)).forEach { target ->
                             if (target is LivingEntity) {
