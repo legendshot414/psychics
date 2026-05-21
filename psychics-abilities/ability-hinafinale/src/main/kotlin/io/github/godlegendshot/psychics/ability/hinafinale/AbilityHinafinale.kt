@@ -70,12 +70,6 @@ class AbilityHinafinale : ActiveAbility<AbilityConceptHinafinale>(), Listener {
 
     override fun onEnable() {
         psychic.runTaskTimer({
-            if (remain == 0) durationTime = 0L
-            if (durationTime == 0L && aimMode) {
-                cooldownTime = concept.cooldownTime
-                aimMode = false
-            }
-
             if (aimMode) {
                 esper.player.sendActionBar(text("남은 탄환 : ${remain}발").color(NamedTextColor.LIGHT_PURPLE))
                 update()
@@ -84,31 +78,47 @@ class AbilityHinafinale : ActiveAbility<AbilityConceptHinafinale>(), Listener {
         psychic.registerEvents(this)
     }
 
+    override fun onDisable() {
+        onStopConcentrate()
+    }
+
     override fun onCast(event: PlayerEvent, action: WandAction, target: Any?) {
         if (durationTime > 0L && aimMode) {
-            fire()
-            if (remain >= 1) remain -= 1
+            if (remain >= 1){
+                remain -= 1
+                fire()
+                if (remain == 0) onStopConcentrate()
+            }
+            return
         }
-
-        if (!aimMode) {
-            aimStart = Observe(esper.player.location)
-            val location = esper.player.location
-            val world = location.world
-            aimMode = true
-            remain = concept.ammo
-            durationTime = concept.durationTime
-            cooldownTime = 500L
-            world.playSound(location, Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 2.0F, 1.0F)
-            psychic.consumeMana(concept.cost)
-        }
+        onConcentrate()
     }
+
+    private fun onStopConcentrate(){
+        durationTime = 0L
+        cooldownTime = concept.cooldownTime
+        aimMode = false
+        aimStart?.onRemove()
+        aimStart = null
+    }
+
+    private fun onConcentrate(){
+        aimStart = Observe(esper.player.location)
+        val location = esper.player.location
+        val world = location.world
+        aimMode = true
+        remain = concept.ammo
+        durationTime = concept.durationTime
+        cooldownTime = 500L
+        world.playSound(location, Sound.ENTITY_DRAGON_FIREBALL_EXPLODE, 2.0F, 1.0F)
+        psychic.consumeMana(concept.cost)
+    }
+
     private fun update(){
         if (durationTime > 0L && aimMode){
             aimStart?.onUpdate()
         }
-        else{
-            aimStart?.onRemove()
-        }
+        else onStopConcentrate()
     }
 
     inner class Observe(location: Location){
@@ -128,7 +138,7 @@ class AbilityHinafinale : ActiveAbility<AbilityConceptHinafinale>(), Listener {
             world.spawnParticle(
                 Particle.DUST,
                 location.x, location.y, location.z,
-                150,
+                50,
                 2.0, 0.0, 2.0,
                 1.0, Particle.DustOptions(Color.fromRGB(220, 208, 255), 1.0f), true
             )
@@ -136,7 +146,7 @@ class AbilityHinafinale : ActiveAbility<AbilityConceptHinafinale>(), Listener {
             world.spawnParticle(
                 Particle.DUST,
                 location.x, location.y + 0.9, location.z,
-                25,
+                10,
                 2.0, 1.0, 2.0,
                 1.0, Particle.DustOptions(Color.fromRGB(220, 208, 255), 1.0f), true
             )
