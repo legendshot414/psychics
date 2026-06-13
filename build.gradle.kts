@@ -35,6 +35,6 @@ subprojects {
         implementation(kotlin("stdlib"))
         implementation(kotlin("reflect"))
 
-        implementation("io.github.legendshot414:tap-api:1.1.3-BETA.2")
+        implementation("io.github.legendshot414:tap-api:1.1.3-BETA.7")
     }
 }

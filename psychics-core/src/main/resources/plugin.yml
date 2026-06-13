@@ -4,6 +4,6 @@ api-version: '1.21.1'
 version: $version
 author: Monun
 libraries:
-  - io.github.legendshot414:tap-core:1.1.3-BETA.2
+  - io.github.legendshot414:tap-core:1.1.3-BETA.7
   - io.github.monun:invfx-core:3.3.2
   - io.github.legendshot414:kommand-core:1.0.3
