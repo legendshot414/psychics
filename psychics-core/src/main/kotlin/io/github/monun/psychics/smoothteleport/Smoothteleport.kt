@@ -11,6 +11,7 @@ fun teleportSmoothly(player: Player, loc: Location) {
     }
     player.teleport(
         newloc,
-        TeleportFlag.Relative.VELOCITY_ROTATION
+        TeleportFlag.Relative.YAW,
+        TeleportFlag.Relative.PITCH
     )
 }

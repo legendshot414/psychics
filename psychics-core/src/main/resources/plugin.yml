@@ -1,9 +1,9 @@
 name: Psychics
 main: io.github.monun.psychics.plugin.PsychicsPlugin
-api-version: '1.21.3'
+api-version: '1.20'
 version: $version
 author: Monun
 libraries:
-  - io.github.legendshot414:tap-core:1.1.3-BETA.8
+  - io.github.legendshot414:tap-core:1.1.3-BETA.14
   - io.github.monun:invfx-core:3.3.2
-  - io.github.legendshot414:kommand-core:1.0.3
+  - xyz.icetang.lib:kommand-core:3.1.11

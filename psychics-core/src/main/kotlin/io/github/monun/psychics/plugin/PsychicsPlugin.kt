@@ -17,7 +17,7 @@
 
 package io.github.monun.psychics.plugin
 
-import io.github.legendshot414.kommand.kommand
+import xyz.icetang.lib.kommand.kommand
 import io.github.monun.psychics.PsychicManager
 import io.github.monun.psychics.Psychics
 import io.github.monun.psychics.attribute.EsperStatistic

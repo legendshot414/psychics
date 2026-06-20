@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation("io.github.legendshot414:kommand-api:1.0.3")
+    implementation("xyz.icetang.lib:kommand-api:3.1.11")
     implementation("io.github.monun:invfx-api:3.3.2")
 }
 
